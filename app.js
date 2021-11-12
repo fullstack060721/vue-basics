@@ -3,12 +3,16 @@ const app = Vue.createApp({
       return {
         title: 'The Way of Kings',
         author: 'Brandon Sanderson',
-        age: 45
+        age: 45,
+        showBooks: true
       }
     },
     methods: {
         changeTitle(title) {
             this.title = title
+        },
+        show_hide_books() {
+            this.showBooks = !this.showBooks
         }
     }
   })
