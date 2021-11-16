@@ -7,8 +7,7 @@ const app = Vue.createApp({
             { title: 'The way of kings', author: 'Brandon Sanderson', img: 'assets/2.jpg', isFav: false },
             { title: 'The final empire', author: 'Brandon Sanderson', img: 'assets/3.jpg', isFav: true },
         ],
-        a1 : 1,
-        a2 : 1
+        _now : Date.now()
         // computed 
         // filteredBooks: ...
       }
@@ -19,23 +18,26 @@ const app = Vue.createApp({
       },
       toggleFav(book) {
         book.isFav = !book.isFav
-        a1++
-        a2++
+       // this._now = Date.now()
       },
-      getBooks() {
-          // this also works but slower performance becuase
-          // its not computed innto a getter,
-          // so better to use computed 
+      // this also works but slower performance becuase
+      // its not computed innto a getter,
+      // so better to use computed 
+      getFilteredBooks() {
         return this.books.filter(book => book.isFav)
       }
     },
 
     computed: {
       filteredBooks() {
+         
+        this._now = Date.now()
+        console.log('computed -----------------')
         return this.books.filter(book => book.isFav)
       },
       now() {
-          return this.a2
+        console.log('computed NOW -----------------')
+          return this._now
       }
     }
     
