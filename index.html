@@ -20,9 +20,8 @@
 
   <div id="app">
       <div v-if="showBooks">
-
         <ul>
-            <li v-for="b in books">
+            <li v-for="b in books" class="box">
               <img :src="b.img" :alt="b.title">
               <h3>{{ b.title }}</h3>
               <p>{{ b.author }}</p>
