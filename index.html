@@ -11,10 +11,10 @@
   <div id="app">
       <div v-if="showBooks">
         <ul>
-            <li v-for="book in books" :class="{ fav: book.isFav }">
-              <img :src="book.img" :alt="book.title">
-              <h3>{{ book.title }}</h3>
-              <p>{{ book.author }}</p>
+            <li v-for="b in books" :class="{ fav: b.isFav }">
+              <img :src="b.img" :alt="b.title">
+              <h3>{{ b.title }}</h3>
+              <p>{{ b.author }}</p>
             </li>
           </ul>
       </div>
